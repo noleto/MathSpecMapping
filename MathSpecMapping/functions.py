@@ -170,12 +170,12 @@ def write_state_variable_table(target_state):
         <th>Description</th>
         <th>Type</th>
         <th>Symbol</th>
-        <th>Units</th>
+        <th>Domain</th>
       </tr>"""
 
     for var in target_state.__dict__["__annotations__"].values():
         table_vars = [var.name, var.description,
-                      var.variable_type, var.symbol, var.units]
+                      var.variable_type, var.symbol, var.domain]
         table += "<tr>"
         for tv in table_vars:
             table += "<td>"
@@ -230,11 +230,11 @@ def write_metrics_table(metric_table):
         <th>Name</th>
         <th>Description</th>
         <th>Value</th>
-        <th>Units</th>
+        <th>Domain</th>
       </tr>"""
 
     for var in metric_table.__dict__["__annotations__"].values():
-        table_vars = [var.name, var.description, var.value, var.units]
+        table_vars = [var.name, var.description, var.value, var.domain]
         table += "<tr>"
         for tv in table_vars:
             table += "<td>"
